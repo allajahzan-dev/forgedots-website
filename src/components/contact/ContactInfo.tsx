@@ -1,9 +1,11 @@
 "use client";
 
 import { MapPin, Phone, Mail } from "lucide-react";
+
+import SectionTitle from "@/components/common/SectionTitle";
+import SectionSubTitle from "@/components/common/SectionSubTitle";
+
 import { COMPANY } from "@/data/constants";
-import { cn } from "@/lib/utils";
-import { bricolageGrotesque } from "@/fonts";
 
 export function InfoBlock({
   icon: Icon,
@@ -15,15 +17,15 @@ export function InfoBlock({
   children: React.ReactNode;
 }) {
   return (
-    <div className="flex gap-4 py-5 border-b border-border">
-      <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-[#6d5adc]/10 text-[#6d5adc]">
+    <div className="flex gap-4 py-5 border-b">
+      <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-[#0c1029]/10 text-[#0c1029]">
         <Icon size={20} />
       </div>
-      <div>
-        <div className="mb-1.5 text-[11px] font-semibold uppercase tracking-[0.13em] text-muted-foreground">
+      <div className="space-y-2">
+        <div className="text-xs font-semibold uppercase tracking-widest text-muted-foreground">
           {label}
         </div>
-        <div className="text-[15px] leading-relaxed text-foreground">
+        <div className="text-sm leading-relaxed text-foreground">
           {children}
         </div>
       </div>
@@ -33,18 +35,13 @@ export function InfoBlock({
 
 export default function ContactInfo() {
   return (
-    <div>
-      <h2
-        className={cn(
-          "mb-3 text-[28px] font-bold text-foreground",
-          bricolageGrotesque.className,
-        )}
-      >
-        Get in touch directly.
-      </h2>
-      <p className="mb-5 text-[15px] text-muted-foreground">
+    <div className="will-change-transform">
+      <SectionTitle className="text-3xl">Get in touch directly.</SectionTitle>
+      <SectionSubTitle className="mb-5 text-muted-foreground">
         Reach out by phone, email, or visit us at either office.
-      </p>
+      </SectionSubTitle>
+
+      {/* Contact details */}
       <InfoBlock icon={MapPin} label="India Office">
         {COMPANY.india}
       </InfoBlock>
@@ -54,7 +51,7 @@ export default function ContactInfo() {
       <InfoBlock icon={Phone} label="Phone">
         <a
           href={`tel:${COMPANY.phone.replace(/\s/g, "")}`}
-          className="hover:text-[#6d5adc] transition-colors"
+          className="text-[#0c1029] transition-colors"
         >
           {COMPANY.phone}
         </a>
@@ -62,7 +59,7 @@ export default function ContactInfo() {
       <InfoBlock icon={Mail} label="Email">
         <a
           href={`mailto:${COMPANY.email}`}
-          className="font-medium text-[#6d5adc] hover:text-[#5b4abf] transition-colors"
+          className="text-[#0c1029] transition-colors"
         >
           {COMPANY.email}
         </a>
@@ -89,9 +86,9 @@ export default function ContactInfo() {
       >
         <a
           href="https://linkedin.com"
-          className="text-[#6d5adc] hover:text-[#5b4abf] transition-colors"
+          className="text-[#0c1029] transition-colors"
         >
-          Follow us on LinkedIn →
+          Follow us on LinkedIn
         </a>
       </InfoBlock>
     </div>

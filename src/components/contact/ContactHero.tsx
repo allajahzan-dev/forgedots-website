@@ -1,47 +1,52 @@
 "use client";
 
-import ScrollReveal from "@/components/animated/ScrollReveal";
 import { cn } from "@/lib/utils";
 import { bricolageGrotesque } from "@/fonts";
-import AuroraBg from "../animated/AuroraBg";
+
+import ScrollReveal from "@/components/animated/ScrollReveal";
+import SectionWrapper from "@/components/common/SectionWrapper";
+import SectionLeftCenterLayout from "@/components/common/SectionLeftCenterLayout";
+import SectionTitle from "@/components/common/SectionTitle";
+import SectionSubTitle from "@/components/common/SectionSubTitle";
+import SectionLabel from "@/components/common/SectionLabel";
 
 export default function ContactHero() {
+  const currentYear = new Date().getFullYear();
+
   return (
-    <section className="relative overflow-hidden bg-background px-6 py-32 text-primary-foreground">
-      <div className="dot-grid absolute inset-0 z-0 opacity-50" aria-hidden />
-
-      {/* Exact Nexaro Aurora Background */}
-      <AuroraBg />
-
-      <div className="container relative z-10 mx-auto text-center">
-        <ScrollReveal>
-          <h1
-            className={cn(
-              "mx-auto mb-5 max-w-xl text-5xl font-bold leading-tight tracking-tight",
-              bricolageGrotesque.className,
-            )}
-          >
-            Let's build something remarkable together.
-          </h1>
-          <p className="mx-auto text-base text-primary-foreground/80">
-            Two offices. One team. Always ready to help. 🇮🇳 🇦🇪
-          </p>
-          <div className="flex flex-wrap justify-center gap-3 mt-5">
-            {[
-              "📍 India & UAE",
-              "⚡ 24hr Response",
-              "🌍 5+ Countries Served",
-            ].map((p) => (
-              <span
-                key={p}
-                className="rounded-full px-[18px] py-2 text-[13px] bg-background/5 border border-background/10 text-sm font-semibold hover:bg-white/10"
-              >
-                {p}
-              </span>
-            ))}
-          </div>
-        </ScrollReveal>
-      </div>
-    </section>
+    <SectionWrapper className="py-32 pt-52">
+      <ScrollReveal>
+        <SectionLeftCenterLayout
+          leftContent={
+            <SectionLabel
+              className={cn("text-sm mt-3", bricolageGrotesque.className)}
+            >
+              2022 — {currentYear}
+            </SectionLabel>
+          }
+          rightContent={
+            <>
+              <SectionTitle className="text-6xl leading-tight">
+                Let's build something remarkable together.
+              </SectionTitle>
+              <SectionSubTitle className="text-muted-foreground">
+                Two offices. One team. Always ready to help. 🇮🇳 🇦🇪
+              </SectionSubTitle>
+              <div className="flex w-full gap-3">
+                {[
+                  "📍 India & UAE",
+                  "⚡ 24hr Response",
+                  "🌍 5+ Countries Served",
+                ].map((p) => (
+                  <span key={p} className="text-sm font-medium">
+                    {p}
+                  </span>
+                ))}
+              </div>
+            </>
+          }
+        />
+      </ScrollReveal>
+    </SectionWrapper>
   );
 }

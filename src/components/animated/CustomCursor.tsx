@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
+import { cn } from "@/lib/utils";
 
 export default function CustomCursor() {
   const cursorRef = useRef<HTMLDivElement>(null);
@@ -58,7 +59,9 @@ export default function CustomCursor() {
   return (
     <div
       ref={cursorRef}
-      className={`custom-cursor ${hover ? "cursor-hover" : ""}`}
+      className={cn(
+        "pointer-events-none fixed left-0 top-0 z-[9999] rounded-full border-[1.5px] border-white bg-[#0f0e1a] shadow-[0_0_0_1px_rgba(0,0,0,0.2),0_2px_8px_rgba(0,0,0,0.3)] will-change-transform",
+      )}
       style={{
         width: hover ? 14 : 8,
         height: hover ? 14 : 8,

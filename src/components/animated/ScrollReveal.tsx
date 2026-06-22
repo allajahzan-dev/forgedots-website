@@ -1,12 +1,8 @@
 "use client";
 
-import { useRef, type ReactNode } from "react";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { useGSAP } from "@gsap/react";
+import { type ReactNode } from "react";
+import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
-
-gsap.registerPlugin(ScrollTrigger, useGSAP);
 
 export default function ScrollReveal({
   children,
@@ -19,39 +15,19 @@ export default function ScrollReveal({
   y?: number;
   className?: string;
 }) {
-  const container = useRef<HTMLDivElement>(null);
-
-  useGSAP(
-    () => {
-      if (!container.current) return;
-
-      gsap.fromTo(
-        container.current,
-        { opacity: 0, y },
-        {
-          opacity: 1,
-          y: 0,
-          duration: 0.8,
-          delay,
-          ease: "power2.out",
-          scrollTrigger: {
-            trigger: container.current,
-            start: "top 90%", // triggers when top of element hits 90% of viewport
-            once: true,
-          },
-        },
-      );
-    },
-    { scope: container, dependencies: [y, delay] },
-  );
-
   return (
-    <div
-      ref={container}
-      className={cn(className)}
-      style={{ opacity: 0, willChange: "transform, opacity" }}
+    <motion.div
+      initial={{ opacity: 0, y }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: "0px 0px -10% 0px" }}
+      transition={{
+        duration: 0.8,
+        delay,
+        ease: [0.21, 0.47, 0.32, 0.98], // Close equivalent to power2.out
+      }}
+      className={cn("will-change-transform", className)}
     >
       {children}
-    </div>
+    </motion.div>
   );
 }

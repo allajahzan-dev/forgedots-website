@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { Mail, Phone } from "lucide-react";
-import LogoMark from "@/components/common/LogoMark";
+import AppLogo from "@/components/common/AppLogo";
 import { COMPANY, SERVICES_LIST } from "@/data/constants";
 import { cn } from "@/lib/utils";
 import { bricolageGrotesque } from "@/fonts";
@@ -16,19 +16,11 @@ export default function Footer() {
 
   return (
     <SectionWrapper className="relative z-40 py-0 pt-44 -mt-14 bg-[#0c1029] text-white">
-      <div className="grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-[1.4fr_1fr_1fr_1.2fr] lg:gap-12">
+      <div className="grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-[1.4fr_1fr_1fr_1.2fr] lg:gap-12 will-change-transform">
         {/* Col 1 — brand */}
         <div className="space-y-5">
-          <Link
-            href="/"
-            className={cn(
-              "inline-flex items-center gap-2.5 text-xl font-bold",
-              bricolageGrotesque.className,
-            )}
-          >
-            <LogoMark size={28} color="#6d5adc" />
-            FORGEDOTS
-          </Link>
+          {/* App logo */}
+          <AppLogo className="text-xl" iconColor="#6d5adc" />
           <div className="text-sm text-white/60">{COMPANY.tagline}</div>
           <p className="max-w-[320px] text-sm text-white/60">
             We turn raw data into intelligent business decisions through
@@ -105,7 +97,7 @@ export default function Footer() {
         </div>
       </div>
 
-      <div className="flex flex-wrap justify-between gap-3 border-t border-white/10 py-8 text-xs text-white/60">
+      <div className="flex flex-wrap justify-between gap-3 border-t border-white/10 py-8 text-xs text-white/60 will-change-transform">
         <span>© 2026 ForgeDots Technologies LLC. All rights reserved.</span>
         <span>Crafted with intent — UAE · India</span>
       </div>

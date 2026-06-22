@@ -8,16 +8,14 @@ import WhyForgeDotsSection from "@/components/home/WhyForgeDotsSection";
 
 export default function Home() {
   return (
-    <main>
+    <main className="relative z-50 bg-background rounded-b-[30px] md:rounded-b-[50px] overflow-hidden">
       <HeroSection />
-      <div className="relative z-50 bg-background rounded-[30px] md:rounded-[50px] overflow-hidden">
-        <ModernServicesSection />
-        <HowWeWorkSection />
-        <IndustriesSection />
-        <TechPartnersSection />
-        <WhyForgeDotsSection />
-        <CtaBanner />
-      </div>
+      <ModernServicesSection />
+      <HowWeWorkSection />
+      <IndustriesSection />
+      <TechPartnersSection />
+      <WhyForgeDotsSection />
+      <CtaBanner />
     </main>
   );
 }

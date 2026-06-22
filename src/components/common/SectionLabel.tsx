@@ -1,7 +1,7 @@
-import { ReactNode } from "react";
+import { ReactNode, HTMLAttributes } from "react";
 import { cn } from "@/lib/utils";
 
-interface SectionLabelProps {
+interface SectionLabelProps extends HTMLAttributes<HTMLParagraphElement> {
   children: ReactNode;
   className?: string;
 }
@@ -9,9 +9,13 @@ interface SectionLabelProps {
 export default function SectionLabel({
   children,
   className,
+  ...props
 }: SectionLabelProps) {
   return (
-    <p className={cn("text-base font-semibold transform-gpu", className)}>
+    <p
+      className={cn("text-base font-semibold transform-gpu", className)}
+      {...props}
+    >
       {children}
     </p>
   );

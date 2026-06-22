@@ -8,9 +8,8 @@ import { dmSans } from "@/fonts";
 import SmoothScroll from "@/components/layout/SmoothScroll";
 import CustomCursor from "@/components/animated/CustomCursor";
 import ClientOnly from "@/components/layout/ClientOnly";
-import { Geist } from "next/font/google";
-
-const geist = Geist({ subsets: ["latin"], variable: "--font-sans" });
+import Navbar from "@/components/layout/Navbar";
+import Footer from "@/components/layout/Footer";
 
 // Metadata
 export const metadata: Metadata = {
@@ -24,18 +23,16 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html
-      lang="en"
-      suppressHydrationWarning
-      className={cn("font-sans", geist.variable)}
-    >
+    <html lang="en" suppressHydrationWarning>
       <body
         className={cn(dmSans.className, "antialiased overflow-x-hidden")}
         suppressHydrationWarning
       >
         <ClientOnly>
           <CustomCursor />
-          <SmoothScroll>{children}</SmoothScroll>
+          <Navbar />
+          {children}
+          <Footer />
         </ClientOnly>
       </body>
     </html>

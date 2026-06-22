@@ -42,10 +42,7 @@ function Line({ i, children }: { i: number; children: React.ReactNode }) {
 
 export default function HeroSection() {
   return (
-    <section
-      data-speed="0.1"
-      className="relative z-0 h-screen pt-40 pb-20 px-6 flex flex-col items-center justify-center overflow-hidden text-center"
-    >
+    <section className="relative z-0 h-screen pt-40 pb-20 px-6 flex flex-col items-center justify-center overflow-hidden text-center">
       {/* Exact Nexaro Aurora Background */}
       <AuroraBg />
 
@@ -67,7 +64,7 @@ export default function HeroSection() {
         {/* Title */}
         <h1
           className={cn(
-            "text-[clamp(44px,8vw,68px)] font-extrabold leading-[1.02] tracking-tight",
+            "text-[clamp(44px,8vw,64px)] font-extrabold leading-[1.02] tracking-tight",
             bricolageGrotesque.className,
           )}
         >
@@ -79,8 +76,8 @@ export default function HeroSection() {
         <motion.p
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ delay: 1.6, duration: 0.7 }}
-          className="text-base text-primary-foreground/80 max-w-lg mx-auto"
+          transition={{ delay: 1, duration: 0.7 }}
+          className="text-sm text-primary-foreground/80 max-w-lg mx-auto"
         >
           ForgeDots delivers end-to-end data intelligence — from engineering
           clean pipelines to deploying AI chatbots — so your team makes faster,
@@ -91,7 +88,7 @@ export default function HeroSection() {
         <motion.div
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 1.75, duration: 0.6 }}
+          transition={{ delay: 1.2, duration: 0.6 }}
           className="mb-16 flex flex-wrap justify-center gap-2 transform-gpu"
         >
           <Link
@@ -113,7 +110,7 @@ export default function HeroSection() {
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ delay: 1.9, duration: 0.8 }}
+          transition={{ delay: 1.4, duration: 0.8 }}
           className="max-w-[880px] mx-auto py-6 border-y flex flex-wrap items-center justify-center gap-0 border-background/10"
         >
           {STATS.map((s, i) => (
@@ -124,7 +121,7 @@ export default function HeroSection() {
                 i !== 0 && "border-l border-background/10",
               )}
             >
-              <div className="text-2xl font-bold">
+              <div className="text-lg font-bold">
                 {s.num}
                 {s.suffix}
               </div>

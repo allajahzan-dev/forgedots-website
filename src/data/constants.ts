@@ -231,7 +231,7 @@ export const STATS = [
   {
     num: 30,
     suffix: "+",
-    label: "Years Combined Experience",
+    label: "Years Experience",
     desc: "In data engineering, analytics, and AI",
     color: "amber" as Accent,
   },
@@ -245,7 +245,7 @@ export const STATS = [
   {
     num: 5,
     suffix: "+",
-    label: "Countries Worked In",
+    label: "Countries",
     desc: "UAE, India, and international markets",
     color: "violet" as Accent,
   },
