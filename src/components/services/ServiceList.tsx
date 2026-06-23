@@ -7,6 +7,7 @@ import { SERVICES, ACCENT_HEX } from "@/data/constants";
 import SectionWrapper from "@/components/common/SectionWrapper";
 import SectionLabel from "@/components/common/SectionLabel";
 import SectionTitle from "@/components/common/SectionTitle";
+import AppButton from "@/components/common/AppButton";
 import { bricolageGrotesque } from "@/fonts";
 import { cn } from "@/lib/utils";
 
@@ -57,12 +58,9 @@ export default function ServiceList() {
                         </li>
                       ))}
                     </ul>
-                    <Link
-                      href="/contact"
-                      className="inline-flex h-10 items-center justify-center rounded-lg border border-border bg-transparent p-3 px-4 text-sm font-medium text-foreground transition-colors hover:bg-muted"
-                    >
+                    <AppButton href="/contact" variant="outline">
                       Get in Touch →
-                    </Link>
+                    </AppButton>
                   </div>
                 </ScrollReveal>
                 <ScrollReveal delay={0.1}>{Info && <Info />}</ScrollReveal>

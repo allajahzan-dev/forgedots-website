@@ -10,9 +10,9 @@ export default function ImageSection({
   alt = "hero image",
 }: ImageSectionProps) {
   return (
-    <div className="relative h-[80vh] overflow-hidden">
+    <div className="relative h-[60vh] overflow-hidden">
       {/* Premium dark gradient overlay */}
-      <div className="absolute inset-0 z-10 bg-linear-to-tr from-black/50 via-black/10 to-black/20 pointer-events-none" />
+      <div className="absolute inset-0 z-10 bg-linear-to-b from-black/40 via-black/10 to-black/40 pointer-events-none" />
 
       <Image
         src={src}

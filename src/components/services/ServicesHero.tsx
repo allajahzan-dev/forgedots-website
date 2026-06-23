@@ -14,7 +14,7 @@ export default function ServicesHero() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <SectionWrapper className="py-32 pt-52">
+    <SectionWrapper className="pt-28 md:pt-36 lg:pt-44">
       <ScrollReveal>
         <SectionLeftCenterLayout
           leftContent={
@@ -26,7 +26,7 @@ export default function ServicesHero() {
           }
           rightContent={
             <>
-              <SectionTitle className="text-6xl leading-tight">
+              <SectionTitle className="text-3xl md:text-4xl lg:text-6xl">
                 Ed-to-end data and AI — built for your business.
               </SectionTitle>
               <SectionSubTitle className="text-muted-foreground">

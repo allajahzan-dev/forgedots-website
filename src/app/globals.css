@@ -163,14 +163,8 @@
   }
 
   ::selection {
-    background: var(--violet);
-    color: #fff;
-  }
-
-  :focus-visible {
-    outline: 2px solid var(--violet);
-    outline-offset: 3px;
-    border-radius: 4px;
+    background-color: #0c1029;
+    color: #ffffff;
   }
 
   /* Typography */

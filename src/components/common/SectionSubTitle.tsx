@@ -11,7 +11,7 @@ export default function SectionSubTitle({
   className,
 }: SectionSubTitleProps) {
   return (
-    <p className={cn("max-w-lg text-base transform-gpu", className)}>
+    <p className={cn("max-w-lg text-base will-change-transform", className)}>
       {children}
     </p>
   );

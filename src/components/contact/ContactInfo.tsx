@@ -17,7 +17,7 @@ export function InfoBlock({
   children: React.ReactNode;
 }) {
   return (
-    <div className="flex gap-4 py-5 border-b">
+    <div className="flex gap-4 py-5 border-b last:border-0 will-change-transform">
       <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-[#0c1029]/10 text-[#0c1029]">
         <Icon size={20} />
       </div>
@@ -35,8 +35,10 @@ export function InfoBlock({
 
 export default function ContactInfo() {
   return (
-    <div className="will-change-transform">
-      <SectionTitle className="text-3xl">Get in touch directly.</SectionTitle>
+    <div>
+      <SectionTitle className="text-xl md:text-2xl lg:text-3xl">
+        Get in touch directly.
+      </SectionTitle>
       <SectionSubTitle className="mb-5 text-muted-foreground">
         Reach out by phone, email, or visit us at either office.
       </SectionSubTitle>

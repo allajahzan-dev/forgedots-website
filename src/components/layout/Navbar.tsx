@@ -1,12 +1,11 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useLayoutEffect, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { motion } from "framer-motion";
 import { Menu, X } from "lucide-react";
 
-import { bricolageGrotesque } from "@/fonts";
 import { cn } from "@/lib/utils";
 
 import AppLogo from "@/components/common/AppLogo";
@@ -15,7 +14,7 @@ import AppLogo from "@/components/common/AppLogo";
 const LINKS = [
   { href: "/", label: "Home" },
   { href: "/services", label: "Services" },
-  // { href: "/contact", label: "Contact" },
+  { href: "/contact", label: "Contact" },
 ];
 
 export default function Navbar() {
@@ -24,7 +23,7 @@ export default function Navbar() {
 
   const pathname = usePathname();
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 0);
     onScroll();
     window.addEventListener("scroll", onScroll);
@@ -36,22 +35,22 @@ export default function Navbar() {
   }, [pathname]);
 
   const isLightTheme = pathname === "/services" || pathname === "/contact";
-  const textColor = isLightTheme ? "text-black" : "text-white";
 
   return (
-    <header className={cn("fixed top-0 z-100 w-full")}>
+    <header className="fixed top-0 z-100 w-full">
       <div
         className={cn(
           "h-18 px-10 md:px-20 lg:px-40 flex items-center justify-between",
-          textColor,
-          scrolled ? "bg-white text-black shadow-md" : "bg-transparent",
+          scrolled || isLightTheme
+            ? "bg-white text-black shadow-md"
+            : "bg-transparent text-white",
         )}
       >
         {/* App logo */}
         <AppLogo className="text-lg" />
 
         <nav
-          className="hidden md:flex gap-10 relative right-8"
+          className="hidden md:flex gap-10 relative right-5"
           aria-label="Main"
         >
           {LINKS.map((l) => {
@@ -62,16 +61,19 @@ export default function Navbar() {
                 href={l.href}
                 className={cn(
                   "relative py-2 text-sm font-medium",
-                  // !active && "text-primary-foreground/80 ",
+                  // !active && "text-muted-foreground ",
                 )}
               >
                 {l.label}
-                {/* {active && (
+                {active && (
                   <motion.span
                     layoutId="nav-underline"
-                    className="absolute inset-x-0 -translate-x-1/2 bottom-0 h-px bg-background rounded-full"
+                    className={cn(
+                      "absolute inset-x-0 bottom-0 h-px rounded-full",
+                      isLightTheme || scrolled ? "bg-black" : "bg-white",
+                    )}
                   />
-                )} */}
+                )}
               </Link>
             );
           })}

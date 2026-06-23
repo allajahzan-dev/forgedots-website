@@ -14,7 +14,7 @@ export default function ContactHero() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <SectionWrapper className="py-32 pt-52">
+    <SectionWrapper className="pt-28 md:pt-36 lg:pt-44">
       <ScrollReveal>
         <SectionLeftCenterLayout
           leftContent={
@@ -26,13 +26,13 @@ export default function ContactHero() {
           }
           rightContent={
             <>
-              <SectionTitle className="text-6xl leading-tight">
+              <SectionTitle className="text-3xl md:text-4xl lg:text-6xl">
                 Let's build something remarkable together.
               </SectionTitle>
               <SectionSubTitle className="text-muted-foreground">
                 Two offices. One team. Always ready to help. 🇮🇳 🇦🇪
               </SectionSubTitle>
-              <div className="flex w-full gap-3">
+              <div className="flex flex-col md:flex-row w-full gap-3">
                 {[
                   "📍 India & UAE",
                   "⚡ 24hr Response",

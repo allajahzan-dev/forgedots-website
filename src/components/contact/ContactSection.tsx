@@ -9,7 +9,7 @@ import ContactForm from "./ContactForm";
 export default function ContactSection() {
   return (
     <SectionWrapper className="rounded-b-[30px] md:rounded-b-[50px]">
-      <div className="grid grid-cols-1 gap-10 items-center lg:grid-cols-[0.85fr_1.15fr] lg:gap-20">
+      <div className="grid grid-cols-1 items-center lg:grid-cols-[0.85fr_1.15fr] gap-16 md:gap-24">
         <ScrollReveal>
           <ContactInfo />
         </ScrollReveal>

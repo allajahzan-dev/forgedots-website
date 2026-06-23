@@ -13,7 +13,7 @@ export default function SectionLabel({
 }: SectionLabelProps) {
   return (
     <p
-      className={cn("text-base font-semibold transform-gpu", className)}
+      className={cn("text-base font-semibold will-change-transform", className)}
       {...props}
     >
       {children}

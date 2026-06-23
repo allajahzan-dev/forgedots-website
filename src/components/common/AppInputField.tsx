@@ -31,11 +31,11 @@ export default function AppInputField({
   ...props
 }: AppInputFieldProps) {
   const baseClasses =
-    "w-full rounded-lg border border-border bg-background px-4 py-2.5 text-xs font-medium outline-none transition-all focus:border-[#0c1029] focus:ring-3 focus:ring-[#0c1029]/10";
+    "w-full rounded-lg border border-border bg-background px-4 py-2.5 text-sm font-medium outline-none transition-all focus:border-[#0c1029] focus:ring-3 focus:ring-[#0c1029]/10";
 
   return (
     <div>
-      <label htmlFor={id} className="mb-2 block text-xs font-semibold">
+      <label htmlFor={id} className="mb-2 block text-sm font-semibold">
         {label}
       </label>
       {textarea ? (
@@ -47,7 +47,7 @@ export default function AppInputField({
       ) : (
         <input
           id={id}
-          className={cn(baseClasses, className)}
+          className={cn(baseClasses, className, "h-10")}
           {...(props as InputHTMLAttributes<HTMLInputElement>)}
         />
       )}

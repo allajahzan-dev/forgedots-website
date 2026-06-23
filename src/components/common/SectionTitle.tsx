@@ -14,7 +14,7 @@ export default function SectionTitle({
   return (
     <h1
       className={cn(
-        "font-bold transform-gpu",
+        "font-bold will-change-transform",
         bricolageGrotesque.className,
         className,
       )}
