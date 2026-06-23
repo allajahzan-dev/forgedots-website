@@ -40,7 +40,7 @@ export default function Navbar() {
     <header className="fixed top-0 z-100 w-full">
       <div
         className={cn(
-          "h-18 px-10 md:px-20 lg:px-40 flex items-center justify-between",
+          "h-18 px-5 sm:px-10 md:px-20 lg:px-40 flex items-center justify-between",
           scrolled || isLightTheme
             ? "bg-white text-black shadow-md"
             : "bg-transparent text-white",
@@ -59,21 +59,9 @@ export default function Navbar() {
               <Link
                 key={l.href}
                 href={l.href}
-                className={cn(
-                  "relative py-2 text-sm font-medium",
-                  // !active && "text-muted-foreground ",
-                )}
+                className={cn("relative py-2 text-sm font-medium")}
               >
                 {l.label}
-                {active && (
-                  <motion.span
-                    layoutId="nav-underline"
-                    className={cn(
-                      "absolute inset-x-0 bottom-0 h-px rounded-full",
-                      isLightTheme || scrolled ? "bg-black" : "bg-white",
-                    )}
-                  />
-                )}
               </Link>
             );
           })}

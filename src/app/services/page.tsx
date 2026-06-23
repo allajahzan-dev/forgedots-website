@@ -4,7 +4,6 @@ import CtaBanner from "@/components/common/CtaBanner";
 import ServicesHero from "@/components/services/ServicesHero";
 import ServiceList from "@/components/services/ServiceList";
 import HowWeWorkSection from "@/components/home/HowWeWorkSection";
-import TechPartnersSection from "@/components/home/TechPartnersSection";
 import ImageSection from "@/components/common/ImageSection";
 
 export default function Services() {

@@ -30,7 +30,7 @@ export default function ContactHero() {
                 Let's build something remarkable together.
               </SectionTitle>
               <SectionSubTitle className="text-muted-foreground">
-                Two offices. One team. Always ready to help. 🇮🇳 🇦🇪
+                Two offices. One team. Always ready to help.
               </SectionSubTitle>
               <div className="flex flex-col md:flex-row w-full gap-3">
                 {[

@@ -15,7 +15,7 @@ export default function Footer() {
     "block py-1.5 text-sm text-white/60 transition-colors hover:text-white";
 
   return (
-    <SectionWrapper className="relative z-40 py-0 pt-44 -mt-14 bg-[#0c1029] text-white">
+    <SectionWrapper className="relative z-40 pb-0 md:pb-0 lg:pb-0 pt-28 md:pt-36 lg:pt-44 -mt-14 bg-[#0c1029] text-white">
       <div className="grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-[1.4fr_1fr_1fr_1.2fr] lg:gap-12 will-change-transform">
         {/* Col 1 — brand */}
         <div className="space-y-5">
@@ -59,7 +59,7 @@ export default function Footer() {
         </div>
 
         {/* Col 4 — contact */}
-        <div>
+        <div className="flex flex-col items-start">
           <div className={colTitleClass}>Get in Touch</div>
           <a
             href={`mailto:${COMPANY.email}`}
@@ -76,7 +76,7 @@ export default function Footer() {
           <a
             href="https://linkedin.com"
             aria-label="LinkedIn"
-            className="ml-2 inline-flex h-8 w-8 items-center justify-center rounded-lg border border-white/10 bg-white/5 text-white transition-colors hover:bg-white/10"
+            className="mt-2 inline-flex h-8 w-8 items-center justify-center rounded-lg border border-white/10 bg-white/5 text-white transition-colors hover:bg-white/10"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
