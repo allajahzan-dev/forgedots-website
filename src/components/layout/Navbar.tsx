@@ -3,12 +3,13 @@
 import { useEffect, useLayoutEffect, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
 
 import { cn } from "@/lib/utils";
 
 import AppLogo from "@/components/common/AppLogo";
+import AppButton from "@/components/common/AppButton";
 
 // Nav items
 const LINKS = [
@@ -89,27 +90,49 @@ export default function Navbar() {
         </button>
       </div>
 
-      {/* In phone screen */}
-      {open && (
-        <motion.nav
-          initial={{ opacity: 0, y: -8 }}
-          animate={{ opacity: 1, y: 0 }}
-          className="pt-4 pb-6 px-5 border-t flex md:hidden flex-col gap-1 bg-white"
-        >
-          {LINKS.map((l) => (
-            <Link
-              key={l.href}
-              href={l.href}
-              className="py-3 text-base font-semibold"
+      {/* Mobile Full-Screen Overlay Menu */}
+      <AnimatePresence>
+        {open && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 z-200 px-5 bg-white flex flex-col items-center justify-center md:hidden"
+          >
+            {/* Close Button */}
+            <button
+              aria-label="Close menu"
+              onClick={() => setOpen(false)}
+              className="absolute top-[17px] right-5 p-2 text-black transition-colors"
             >
-              {l.label}
-            </Link>
-          ))}
-          <Link href="/contact" className="mt-3 btn btn-primary">
-            Let's Talk
-          </Link>
-        </motion.nav>
-      )}
+              <X size={22} />
+            </button>
+
+            {/* Links */}
+            <nav className="flex flex-col items-center gap-8 w-full px-5">
+              {LINKS.map((l) => (
+                <Link
+                  key={l.href}
+                  href={l.href}
+                  className="text-lg font-semibold text-zinc-800 tracking-tight hover:text-black transition-colors"
+                  onClick={() => setOpen(false)}
+                >
+                  {l.label}
+                </Link>
+              ))}
+
+              {/* CTA Button */}
+              <AppButton
+                href="/contact"
+                onClick={() => setOpen(false)}
+                className="px-10 py-3.5 bg-[#141835] hover:bg-[#0c1029] text-white text-lg font-semibold rounded-full transition-all active:scale-95"
+              >
+                Let's Talk
+              </AppButton>
+            </nav>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </header>
   );
 }

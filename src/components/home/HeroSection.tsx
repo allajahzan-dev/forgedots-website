@@ -50,8 +50,8 @@ export default function HeroSection() {
           transition={{ delay: 1, duration: 0.5 }}
           className="text-base text-zinc-300 max-w-lg mx-auto"
         >
-          ForgeDots delivers end-to-end data intelligence — from engineering
-          clean pipelines to deploying AI chatbots — so your team makes faster,
+          ForgeDots delivers end-to-end data intelligence from engineering clean
+          pipelines to deploying AI chatbots - so your team makes faster,
           smarter decisions every day.
         </motion.p>
 
