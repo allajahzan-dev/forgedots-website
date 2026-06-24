@@ -88,7 +88,7 @@ export default function PipelineInfographic() {
                   <h3 className="mb-1 text-sm font-semibold leading-tight">
                     {p.name}
                   </h3>
-                  <p className="px-2 text-xs leading-relaxed text-primary-foreground/80">
+                  <p className="px-2 text-xs leading-relaxed text-zinc-300">
                     {p.desc}
                   </p>
                 </motion.div>
@@ -149,7 +149,7 @@ export default function PipelineInfographic() {
                   <h3 className="mb-1 text-base font-semibold text-white">
                     {p.name}
                   </h3>
-                  <p className="text-[13px] text-white/55">{p.desc}</p>
+                  <p className="text-[13px] text-zinc-300">{p.desc}</p>
                 </motion.div>
               </div>
             );

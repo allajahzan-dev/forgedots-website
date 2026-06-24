@@ -13,7 +13,7 @@ export default function SectionWrapper({
   return (
     <section
       className={cn(
-        "relative py-16 md:py-24 lg:py-32 px-5 sm:px-10 md:px-20 lg:px-40 space-y-16 will-change-transform",
+        "relative py-12 md:py-16 lg:py-20 px-5 sm:px-10 md:px-20 lg:px-40 space-y-10 will-change-transform",
         className,
       )}
     >

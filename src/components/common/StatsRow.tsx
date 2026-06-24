@@ -32,7 +32,7 @@ function Stat({ num, suffix, label, desc, color }: (typeof STATS)[number]) {
       violet: "text-[#6d5adc]",
       amber: "text-[#f59e0b]",
       emerald: "text-[#10b981]",
-    }[color] || "text-foreground";
+    }[color] || "text-black";
 
   return (
     <div ref={ref} className="px-6 text-center">
@@ -42,10 +42,10 @@ function Stat({ num, suffix, label, desc, color }: (typeof STATS)[number]) {
         {value}
         {suffix}
       </div>
-      <div className="mb-1.5 text-base font-semibold text-foreground">
+      <div className="mb-1.5 text-base font-semibold text-black">
         {label}
       </div>
-      <div className="text-[13px] leading-relaxed text-muted-foreground">
+      <div className="text-[13px] leading-relaxed text-zinc-500">
         {desc}
       </div>
     </div>
@@ -58,7 +58,7 @@ export default function StatsRow() {
       {STATS.map((s, i) => (
         <div
           key={s.label}
-          className={i !== 0 ? "md:border-l md:border-border" : ""}
+          className={i !== 0 ? "md:border-l md:border-zinc-200" : ""}
         >
           <Stat {...s} />
         </div>

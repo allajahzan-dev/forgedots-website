@@ -26,7 +26,7 @@ export default function ModernServiceCard({
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-60px" }}
       transition={{ duration: 0.6, delay, ease: [0.25, 0.46, 0.45, 0.94] }}
-      className="group relative p-6 flex flex-col items-start bg-background border shadow-md hover:shadow-lg rounded-2xl overflow-hidden transform-gpu"
+      className="group relative p-6 flex flex-col items-start bg-white border border-zinc-200 shadow-md hover:shadow-lg rounded-2xl overflow-hidden transform-gpu"
     >
       {/* <span
         className="absolute left-0 top-0 bottom-0 w-[3px] scale-y-0 origin-top group-hover:scale-y-100 transition-transform duration-300 ease-out"
@@ -51,7 +51,7 @@ export default function ModernServiceCard({
       >
         {card.name}
       </h1>
-      <p className="text-sm text-muted-foreground">{card.desc}</p>
+      <p className="text-sm text-zinc-500">{card.desc}</p>
     </motion.article>
   );
 }

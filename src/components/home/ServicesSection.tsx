@@ -12,7 +12,7 @@ export default function ServicesSection() {
   return (
     <section className="py-32 px-10 md:px-32 bg-[#f4f4f5] rounded-t-[30px] md:rounded-t-[50px] space-y-10">
       <ScrollReveal className="space-y-5">
-        <p className="text-sm font-semibold text-muted-foreground">
+        <p className="text-sm font-semibold text-zinc-500">
           Our Services
         </p>
         <div className="flex items-center justify-between">

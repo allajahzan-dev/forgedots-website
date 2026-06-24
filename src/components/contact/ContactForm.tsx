@@ -55,7 +55,7 @@ export default function ContactForm() {
       </div>
 
       <div>
-        <label className="mb-2 block text-sm font-semibold tracking-[0.02em] text-foreground">
+        <label className="mb-2 block text-sm font-semibold tracking-[0.02em] text-black">
           Type of Enquiry
         </label>
         <div className="flex flex-wrap gap-2">
@@ -67,10 +67,10 @@ export default function ContactForm() {
                 key={t}
                 onClick={() => setEnquiry(t)}
                 className={cn(
-                  "rounded-full border px-4 py-2 text-sm font-medium transition-all duration-200",
+                  "rounded-full border border-zinc-200 px-4 py-2 text-sm font-medium transition-all duration-200",
                   active
                     ? "border-[#0c1029] bg-[#0c1029] text-white"
-                    : "border-border bg-muted/50 text-muted-foreground hover:bg-muted",
+                    : "border-zinc-200 bg-muted/50 text-zinc-500 hover:bg-muted",
                 )}
               >
                 {t}

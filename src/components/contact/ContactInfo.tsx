@@ -22,10 +22,10 @@ export function InfoBlock({
         <Icon size={20} />
       </div>
       <div className="space-y-2">
-        <div className="text-xs font-semibold uppercase tracking-widest text-muted-foreground">
+        <div className="text-xs font-semibold uppercase tracking-widest text-zinc-500">
           {label}
         </div>
-        <div className="text-sm leading-relaxed text-foreground">
+        <div className="text-sm leading-relaxed text-black">
           {children}
         </div>
       </div>
@@ -39,7 +39,7 @@ export default function ContactInfo() {
       <SectionTitle className="text-xl md:text-2xl lg:text-3xl">
         Get in touch directly.
       </SectionTitle>
-      <SectionSubTitle className="mb-5 text-muted-foreground">
+      <SectionSubTitle className="mb-5 text-zinc-500">
         Reach out by phone, email, or visit us at either office.
       </SectionSubTitle>
 

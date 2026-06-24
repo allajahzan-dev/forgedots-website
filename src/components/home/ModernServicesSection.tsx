@@ -3,22 +3,22 @@ import ModernServiceCard from "@/components/common/ModernServiceCard";
 import AnimatedLink from "@/components/common/AnimatedLink";
 import SectionWrapper from "@/components/common/SectionWrapper";
 import SectionLabel from "@/components/common/SectionLabel";
-import SectionTitle from "@/components/common/SectionTitle";
 import SectionLeftCenterLayout from "@/components/common/SectionLeftCenterLayout";
+import { AnimateHeading } from "@/components/animated/AnimatedHeading";
 
 import { SERVICE_CARDS } from "@/data/constants";
 
 export default function ModernServicesSection() {
   return (
-    <SectionWrapper className="bg-gray-50 rounded-t-[30px] md:rounded-t-[50px]">
+    <SectionWrapper className="bg-gray-50">
       <ScrollReveal>
         <SectionLeftCenterLayout
           leftContent={<SectionLabel>Our Services</SectionLabel>}
           rightContent={
             <>
-              <SectionTitle className="max-w-md text-3xl">
+              <AnimateHeading className="max-w-xs md:max-w-sm lg:max-w-md text-xl md:text-2xl lg:text-3xl">
                 Everything your data strategy needs — under one roof.
-              </SectionTitle>
+              </AnimateHeading>
               <AnimatedLink href="/services" text="See more" />
             </>
           }

@@ -31,7 +31,7 @@ export default function AppInputField({
   ...props
 }: AppInputFieldProps) {
   const baseClasses =
-    "w-full rounded-lg border border-border bg-background px-4 py-2.5 text-sm font-medium outline-none transition-all focus:border-[#0c1029] focus:ring-3 focus:ring-[#0c1029]/10";
+    "w-full rounded-lg border border-zinc-200 bg-white px-4 py-2.5 text-sm font-medium outline-none transition-all focus:border-[#0c1029] focus:ring-3 focus:ring-[#0c1029]/10";
 
   return (
     <div>

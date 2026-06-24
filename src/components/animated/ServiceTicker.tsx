@@ -6,7 +6,7 @@ export default function ServiceTicker() {
   const items = [...SERVICES_LIST, ...SERVICES_LIST, ...SERVICES_LIST];
 
   return (
-    <div className="h-12 flex items-center overflow-hidden bg-white border-y border-border rounded-t-[30px] md:rounded-t-[50px]">
+    <div className="h-12 flex items-center overflow-hidden bg-white border-y border-zinc-200 rounded-t-[30px] md:rounded-t-[50px]">
       <div className="w-full flex overflow-hidden">
         <div className="flex shrink-0 whitespace-nowrap animate-[marquee-scroll_55s_linear_infinite]">
           {[...items, ...items].map((s, i) => (

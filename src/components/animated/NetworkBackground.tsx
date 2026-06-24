@@ -50,7 +50,9 @@ export default function NetworkBackground() {
     let particles: Particle[] = [];
 
     // Particle settings
-    const particleCount = 80;
+    const isTabletOrMobile =
+      typeof window !== "undefined" && window.innerWidth < 1024;
+    const particleCount = isTabletOrMobile ? 35 : 80;
     const maxDistance = 180;
     const mouseRadius = 250;
 
@@ -83,8 +85,18 @@ export default function NetworkBackground() {
       }
     };
 
-    const init = () => {
+    let lastWidth = window.innerWidth;
+    const handleResize = () => {
       resize();
+      // Only re-init particles if width changes significantly (e.g. orientation change)
+      // This prevents mobile scroll-bar hiding from randomly resetting particles
+      if (Math.abs(window.innerWidth - lastWidth) > 50) {
+        lastWidth = window.innerWidth;
+        initParticles();
+      }
+    };
+
+    const initParticles = () => {
       particles = [];
       const rect = canvas.parentElement?.getBoundingClientRect();
       if (rect) {
@@ -92,6 +104,11 @@ export default function NetworkBackground() {
           particles.push(new Particle(rect.width, rect.height));
         }
       }
+    };
+
+    const init = () => {
+      resize();
+      initParticles();
     };
 
     const drawLines = () => {
@@ -153,13 +170,13 @@ export default function NetworkBackground() {
     init();
     animate();
 
-    window.addEventListener("resize", init);
+    window.addEventListener("resize", handleResize);
     // Bind directly to window to ensure we catch mouse events seamlessly over the hero section
     // window.addEventListener("mousemove", handleMouseMove);
     // window.addEventListener("mouseleave", handleMouseLeave);
 
     return () => {
-      window.removeEventListener("resize", init);
+      window.removeEventListener("resize", handleResize);
       // window.removeEventListener("mousemove", handleMouseMove);
       // window.removeEventListener("mouseleave", handleMouseLeave);
       cancelAnimationFrame(animationFrameId);
@@ -169,7 +186,7 @@ export default function NetworkBackground() {
   return (
     <canvas
       ref={canvasRef}
-      className="absolute inset-0 z-1 pointer-events-none mix-blend-screen opacity-30"
+      className="absolute inset-0 z-1 pointer-events-none mix-blend-screen opacity-50"
     />
   );
 }

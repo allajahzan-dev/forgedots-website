@@ -38,7 +38,7 @@ export default function StoryStrip() {
                 delay: 1.2 + i * 0.18,
                 ease: [0.25, 0.46, 0.45, 0.94],
               }}
-              className="min-w-[200px] px-6 py-5 border text-left bg-white/5 border-white/10 rounded-[14px] backdrop-blur-md"
+              className="min-w-[200px] px-6 py-5 border border-zinc-200 text-left bg-white/5 border-white/10 rounded-[14px] backdrop-blur-md"
             >
               <div
                 className="mb-3 size-9 inline-flex items-center justify-center bg-white rounded-[10px]"

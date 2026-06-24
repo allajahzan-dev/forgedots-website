@@ -71,8 +71,8 @@ export default function Navbar() {
           <Link
             href="/contact"
             className={cn(
-              "px-4 py-2 text-sm border rounded-full",
-              "border-border hover:bg-white/10",
+              "px-4 py-2 text-sm border border-zinc-200 rounded-full",
+              "border-zinc-200 hover:bg-white/10",
               (scrolled || isLightTheme) && "hover:bg-muted",
             )}
           >

@@ -1,4 +1,4 @@
-import CtaBanner from "@/components/common/CtaBanner";
+import CtaBannerSection from "@/components/common/CtaBannerSection";
 import HeroSection from "@/components/home/HeroSection";
 import ModernServicesSection from "@/components/home/ModernServicesSection";
 import HowWeWorkSection from "@/components/home/HowWeWorkSection";
@@ -8,14 +8,14 @@ import WhyForgeDotsSection from "@/components/home/WhyForgeDotsSection";
 
 export default function Home() {
   return (
-    <main className="relative z-50 bg-background rounded-b-[30px] md:rounded-b-[50px] overflow-hidden">
+    <main className="relative z-50 bg-white rounded-b-[30px] md:rounded-b-[50px] overflow-hidden">
       <HeroSection />
       <ModernServicesSection />
       <HowWeWorkSection />
       <IndustriesSection />
       <TechPartnersSection />
       <WhyForgeDotsSection />
-      <CtaBanner />
+      <CtaBannerSection />
     </main>
   );
 }

@@ -29,7 +29,7 @@ export default function ContactHero() {
               <SectionTitle className="text-3xl md:text-4xl lg:text-6xl">
                 Let's build something remarkable together.
               </SectionTitle>
-              <SectionSubTitle className="text-muted-foreground">
+              <SectionSubTitle className="text-zinc-500">
                 Two offices. One team. Always ready to help.
               </SectionSubTitle>
               <div className="flex flex-col md:flex-row w-full gap-3">

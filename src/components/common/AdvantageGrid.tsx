@@ -24,7 +24,7 @@ const PALETTES: Record<
     bg: "bg-white/[0.06]",
     text: "text-white",
     sub: "text-white/60",
-    border: "border border-white/[0.08]",
+    border: "border border-zinc-200 border-white/[0.08]",
   },
 };
 
@@ -45,7 +45,7 @@ export default function AdvantageGrid() {
               ease: [0.25, 0.46, 0.45, 0.94],
             }}
             className={cn(
-              "bg-background/5 backdrop-blur-sm border border-background/5 shadow-lg rounded-2xl p-7 min-h-[140px]",
+              "p-5 bg-white/5 hover:bg-white/10 text-white border border-zinc-200/10 shadow-lg rounded-2xl",
             )}
           >
             <div
@@ -56,7 +56,7 @@ export default function AdvantageGrid() {
             >
               {a.title}
             </div>
-            <div className="text-sm text-primary-foreground/80">{a.desc}</div>
+            <div className="text-sm text-zinc-300">{a.desc}</div>
           </motion.div>
         );
       })}

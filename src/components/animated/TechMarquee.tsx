@@ -26,7 +26,7 @@ export default function TechPills({
         {[...loop, ...loop].map((t, i) => (
           <div
             key={i}
-            className="px-3 py-2 border flex items-center whitespace-nowrap text-sm font-semibold text-foreground rounded-full bg-white border-border shadow-md"
+            className="px-3 py-2 flex items-center whitespace-nowrap text-sm font-semibold bg-white text-black border border-zinc-200 shadow-md rounded-full"
           >
             {t}
           </div>

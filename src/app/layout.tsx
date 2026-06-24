@@ -5,7 +5,6 @@ import { cn } from "@/lib/utils";
 
 import { dmSans } from "@/fonts";
 
-import SmoothScroll from "@/components/layout/SmoothScroll";
 import CustomCursor from "@/components/animated/CustomCursor";
 import ClientOnly from "@/components/layout/ClientOnly";
 import Navbar from "@/components/layout/Navbar";

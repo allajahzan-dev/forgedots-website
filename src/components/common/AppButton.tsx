@@ -19,12 +19,12 @@ export default function AppButton({
   ...props
 }: AppButtonProps) {
   const baseStyles =
-    "h-10 inline-flex w-fit items-center justify-center rounded-lg px-4 text-sm font-medium transition-colors focus:outline-none";
+    "h-10 px-4 inline-flex w-fit items-center justify-center gap-2 text-sm font-medium transition-colors focus:outline-none rounded-lg";
 
   const variants = {
     primary: "bg-[#0c1029] text-white hover:bg-black/90",
     outline:
-      "border border-border bg-transparent text-foreground hover:bg-muted h-10",
+      "border border-zinc-200 bg-transparent text-black hover:bg-muted h-10",
   };
 
   const classes = cn(baseStyles, variants[variant], className);

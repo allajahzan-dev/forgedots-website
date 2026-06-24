@@ -1,9 +1,11 @@
 "use client";
+
 import { motion } from "framer-motion";
 import * as Icons from "lucide-react";
+import { cn } from "@/lib/utils";
+
 import type { INDUSTRIES } from "@/data/constants";
 import { ACCENT_HEX } from "@/data/constants";
-import { cn } from "@/lib/utils";
 
 type Industry = (typeof INDUSTRIES)[number];
 
@@ -26,10 +28,10 @@ export default function ModernIndustryCard({
       whileHover={{ y: -10 }}
       className="relative pt-10 h-full transform-gpu"
     >
-      <div className="bg-background rounded-2xl h-full w-full pt-14 pb-8 px-2 flex flex-col items-center justify-center relative border shadow-md hover:shadow-lg transition-shadow">
+      <div className="bg-white rounded-2xl h-full w-full pt-14 pb-8 px-2 flex flex-col items-center justify-center relative border border-zinc-200 shadow-md hover:shadow-lg transition-shadow">
         {/* Overflowing Circle */}
         <div
-          className="absolute -top-10 left-1/2 -translate-x-1/2 w-20 h-20 rounded-full flex items-center justify-center shadow-sm border-4 border-background"
+          className="absolute -top-10 left-1/2 -translate-x-1/2 w-20 h-20 rounded-full flex items-center justify-center shadow-sm border-4 border-white"
           style={{ background: accent.soft, color: accent.base }}
         >
           <Icon size={32} strokeWidth={1.5} />
@@ -37,7 +39,7 @@ export default function ModernIndustryCard({
 
         <h3
           className={cn(
-            "text-[16px] xl:text-[17px] font-bold text-foreground tracking-tight text-center",
+            "text-[16px] xl:text-[17px] font-bold text-black tracking-tight text-center",
           )}
         >
           {industry.name}

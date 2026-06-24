@@ -4,7 +4,7 @@ import ImageSection from "@/components/common/ImageSection";
 
 export default function Contact() {
   return (
-    <main className="relative z-50 bg-background rounded-b-[30px] md:rounded-b-[50px] overflow-hidden">
+    <main className="relative z-50 bg-white rounded-b-[30px] md:rounded-b-[50px] overflow-hidden">
       <ContactHero />
       <ImageSection src="/contact-hero.png" alt="Contact banner" />
       <ContactSection />

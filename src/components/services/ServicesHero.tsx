@@ -29,7 +29,7 @@ export default function ServicesHero() {
               <SectionTitle className="text-3xl md:text-4xl lg:text-6xl">
                 Ed-to-end data and AI — built for your business.
               </SectionTitle>
-              <SectionSubTitle className="text-muted-foreground">
+              <SectionSubTitle className="text-zinc-500">
                 Six interconnected services that cover every layer of your
                 alytics and AI journey.
               </SectionSubTitle>

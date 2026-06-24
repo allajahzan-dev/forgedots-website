@@ -1,83 +1,54 @@
 "use client";
 
-import Link from "next/link";
 import { motion } from "framer-motion";
-
-import StoryStrip from "@/components/common/StoryStrip";
-import NetworkBackground from "@/components/animated/NetworkBackground";
-import AuroraBg from "@/components/animated/AuroraBg";
-
-import { STATS } from "@/data/constants";
 import { cn } from "@/lib/utils";
 import { bricolageGrotesque } from "@/fonts";
-import { ArrowRight } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
 
-const wipe = {
-  hidden: { clipPath: "inset(100% 0 0 0)" },
-  show: (i: number) => ({
-    clipPath: "inset(0% 0 0 0)",
-    transition: {
-      duration: 0.85,
-      delay: i * 0.15,
-      ease: [0.76, 0, 0.24, 1] as const,
-    },
-  }),
-};
+import AppButton from "@/components/common/AppButton";
+import NetworkBackground from "@/components/animated/NetworkBackground";
+import AuroraBg from "@/components/animated/AuroraBg";
+import { AnimateHeading } from "@/components/animated/AnimatedHeading";
 
-function Line({ i, children }: { i: number; children: React.ReactNode }) {
-  return (
-    <div className="overflow-hidden block">
-      <motion.div
-        custom={i}
-        initial="hidden"
-        animate="show"
-        variants={wipe}
-        className="block"
-      >
-        {children}
-      </motion.div>
-    </div>
-  );
-}
+import { STATS } from "@/data/constants";
 
 export default function HeroSection() {
   return (
-    <section className="relative z-0 h-screen pt-40 pb-20 px-6 flex flex-col items-center justify-center overflow-hidden text-center">
+    <section className="relative z-0 py-32 pb-12 md:pb-16 lg:pb-20 px-6 flex flex-col items-center justify-center overflow-hidden text-center">
       {/* Exact Nexaro Aurora Background */}
       <AuroraBg />
 
       {/* Interactive Data Network Layer */}
       <NetworkBackground />
 
-      <div className="relative z-10 mx-auto space-y-8 text-primary-foreground">
+      <div className="relative z-10 mx-auto space-y-8 text-white">
         {/* Badge */}
         <motion.div
           initial={{ opacity: 0, y: 8 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
+          transition={{ duration: 0.5 }}
         >
-          <span className="inline-flex items-center gap-2 bg-background/5 border border-background/10 text-primary-foreground/80 text-[11px] font-semibold tracking-wide px-4 py-2 rounded-full">
+          <span className="inline-flex items-center gap-2 bg-white/5 border border-zinc-200/10 text-zinc-300 text-[11px] font-semibold tracking-wide px-4 py-2 rounded-full">
             ⭐ Trusted by 20+ Organizations Across 5 Countries
           </span>
         </motion.div>
 
         {/* Title */}
-        <h1
+        <AnimateHeading
           className={cn(
-            "text-[clamp(44px,8vw,64px)] font-extrabold leading-[1.02] tracking-tight",
             bricolageGrotesque.className,
+            "text-3xl md:text-4xl lg:text-6xl font-extrabold tracking-tight",
           )}
         >
-          <Line i={0}>Raw Data Into</Line>
-          <Line i={1}>Intelligent Decisions.</Line>
-        </h1>
+          Raw Data Into <br /> Intelligent Decisions.
+        </AnimateHeading>
 
         {/* Description */}
         <motion.p
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ delay: 1, duration: 0.7 }}
-          className="text-sm text-primary-foreground/80 max-w-lg mx-auto"
+          transition={{ delay: 1, duration: 0.5 }}
+          className="text-base text-zinc-300 max-w-lg mx-auto"
         >
           ForgeDots delivers end-to-end data intelligence — from engineering
           clean pipelines to deploying AI chatbots — so your team makes faster,
@@ -88,49 +59,47 @@ export default function HeroSection() {
         <motion.div
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 1.2, duration: 0.6 }}
-          className="mb-16 flex flex-wrap justify-center gap-2 transform-gpu"
+          transition={{ delay: 1.4, duration: 0.5 }}
+          className="mb-12 flex flex-wrap justify-center gap-2 transform-gpu"
         >
-          <Link
+          <AppButton
             href="/services"
-            className="inline-flex items-center justify-center h-10 px-5 rounded-full bg-background text-foreground text-sm font-semibold hover:shadow-[0_0_24px_rgba(109,90,220,0.4)] transition-all duration-300 gap-2"
+            className="bg-white hover:bg-white text-black hover:shadow-[0_0_24px_rgba(109,90,220,0.4)] transition-all duration-300 rounded-full"
           >
-            {/* bg-linear-to-r from-violet-600 to-indigo-600 */}
-            Explore Our Services <ArrowRight size={16} />
-          </Link>
-          <Link
+            Explore Services <ArrowUpRight size={16} />
+          </AppButton>
+          <AppButton
             href="/contact"
-            className="inline-flex items-center justify-center h-10 px-5 rounded-full bg-background/5 border border-background/10 text-sm font-semibold hover:bg-white/10 transition-all duration-300"
+            className="bg-white/5 hover:bg-white/10 text-white border border-white transition-all duration-300 rounded-full"
           >
-            Talk to Our Experts
-          </Link>
+            Contact Us
+          </AppButton>
         </motion.div>
 
         {/* Stats */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 1.4, duration: 0.8 }}
-          className="max-w-[880px] mx-auto py-6 border-y flex flex-wrap items-center justify-center gap-0 border-background/10"
-        >
+        <div className="mx-auto py-5 grid grid-cols-2 md:grid-cols-4 gap-y-8 md:gap-y-0 items-center justify-center">
           {STATS.map((s, i) => (
-            <div
+            <motion.div
               key={s.label}
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 1.8 + i * 0.2, duration: 0.5 }}
               className={cn(
-                "min-w-[160px] px-6 flex-1 text-center",
-                i !== 0 && "border-l border-background/10",
+                "p-4 py-0 text-center border-white/10",
+                i % 2 !== 0 && "border-l",
+                i !== 0 && "md:border-l",
               )}
             >
-              <div className="text-lg font-bold">
+              <div className="text-xl md:text-lg font-bold">
                 {s.num}
                 {s.suffix}
               </div>
-              <div className="mt-1 text-xs text-primary-foreground/80">
+              <div className="mt-1 text-[11px] md:text-xs text-zinc-300">
                 {s.label}
               </div>
-            </div>
+            </motion.div>
           ))}
-        </motion.div>
+        </div>
       </div>
     </section>
   );

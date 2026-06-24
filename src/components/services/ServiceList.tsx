@@ -22,7 +22,7 @@ export default function ServiceList() {
         return (
           <SectionWrapper
             key={s.n}
-            className={cn(alt ? "bg-gray-50" : "bg-background")}
+            className={cn(alt ? "bg-gray-50" : "bg-white")}
           >
             <div className="container mx-auto">
               <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-2 lg:gap-20">
@@ -43,12 +43,12 @@ export default function ServiceList() {
                     <SectionTitle className="text-[clamp(32px,4.2vw,48px)]">
                       {s.name}
                     </SectionTitle>
-                    <p className="text-muted-foreground">{s.long}</p>
+                    <p className="text-zinc-500">{s.long}</p>
                     <ul className="flex flex-col gap-3 list-none">
                       {s.bullets.map((b) => (
                         <li
                           key={b}
-                          className="flex items-start gap-3 text-[15px] text-foreground"
+                          className="flex items-start gap-3 text-[15px] text-black"
                         >
                           <span
                             className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full"

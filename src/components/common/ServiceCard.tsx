@@ -22,7 +22,7 @@ export default function ServiceCard({
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-60px" }}
       transition={{ duration: 0.6, delay, ease: [0.25, 0.46, 0.45, 0.94] }}
-      className="relative p-8 bg-background rounded-2xl transition-all duration-300 overflow-hidden group"
+      className="relative p-8 bg-white rounded-2xl transition-all duration-300 overflow-hidden group"
     >
       {/* <span
         className="absolute left-0 top-0 bottom-0 w-[3px] scale-y-0 origin-top group-hover:scale-y-100 transition-transform duration-300 ease-out"
@@ -39,13 +39,13 @@ export default function ServiceCard({
       >
         <Icon size={22} strokeWidth={2} />
       </div>
-      <h3 className="mb-2 text-[19px] font-semibold tracking-tight text-foreground">
+      <h3 className="mb-2 text-[19px] font-semibold tracking-tight text-black">
         {card.name}
       </h3>
-      <p className="mb-5 text-sm leading-relaxed text-muted-foreground">
+      <p className="mb-5 text-sm leading-relaxed text-zinc-500">
         {card.desc}
       </p>
-      <div className="pt-4 border-t text-[11px] font-medium tracking-wide uppercase text-muted-foreground border-border">
+      <div className="pt-4 border-t text-[11px] font-medium tracking-wide uppercase text-zinc-500 border-zinc-200">
         {card.tags}
       </div>
     </motion.article>

@@ -7,9 +7,9 @@ import { cn } from "@/lib/utils";
 
 export default function StatsSection() {
   return (
-    <section className="py-32 px-10 md:px-20 lg:px-40 bg-background space-y-16">
+    <section className="py-32 px-10 md:px-20 lg:px-40 bg-white space-y-16">
       <ScrollReveal className="space-y-2">
-        <p className="text-base text-muted-foreground text-center font-semibold">
+        <p className="text-base text-zinc-500 text-center font-semibold">
           By the Numbers
         </p>
         <h2
