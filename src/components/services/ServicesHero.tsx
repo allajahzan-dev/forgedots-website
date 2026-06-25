@@ -14,20 +14,20 @@ export default function ServicesHero() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <SectionWrapper className="pt-28 md:pt-36 lg:pt-44">
+    <SectionWrapper className="pt-28 lg:pt-36">
       <ScrollReveal>
         <SectionLeftCenterLayout
           leftContent={
             <SectionLabel
               className={cn("text-sm mt-3", bricolageGrotesque.className)}
             >
-              22 — {currentYear}
+              2022 — {currentYear}
             </SectionLabel>
           }
           rightContent={
             <>
               <SectionTitle className="text-3xl md:text-4xl lg:text-6xl">
-                Ed-to-end data and AI — built for your business.
+                End-to-end data and AI — built for your business.
               </SectionTitle>
               <SectionSubTitle className="text-zinc-500">
                 Six interconnected services that cover every layer of your
