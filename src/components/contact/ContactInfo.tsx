@@ -17,7 +17,7 @@ export function InfoBlock({
   children: React.ReactNode;
 }) {
   return (
-    <div className="flex gap-4 py-5 border-b last:border-0 will-change-transform">
+    <div className="flex gap-4 py-5 border-b will-change-transform">
       <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-[#0c1029]/10 text-[#0c1029]">
         <Icon size={20} />
       </div>
@@ -25,9 +25,7 @@ export function InfoBlock({
         <div className="text-xs font-semibold uppercase tracking-widest text-zinc-500">
           {label}
         </div>
-        <div className="text-sm leading-relaxed text-black">
-          {children}
-        </div>
+        <div className="text-sm leading-relaxed text-black">{children}</div>
       </div>
     </div>
   );

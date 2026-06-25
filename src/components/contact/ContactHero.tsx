@@ -14,7 +14,7 @@ export default function ContactHero() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <SectionWrapper className="pt-28 md:pt-36 lg:pt-44">
+    <SectionWrapper className="pt-28 lg:pt-36">
       <ScrollReveal>
         <SectionLeftCenterLayout
           leftContent={

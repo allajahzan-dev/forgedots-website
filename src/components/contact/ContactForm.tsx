@@ -21,19 +21,20 @@ export default function ContactForm() {
   return (
     <form
       onSubmit={onSubmit}
-      className="flex flex-col gap-6 will-change-transform"
+      className="flex flex-col gap-5 will-change-transform"
     >
+      <p className="text-base font-semibold">Send a message:</p>
       <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
         <AppInputField
           id="fn"
           label="First Name"
-          placeholder="Enter First Name"
+          // placeholder="Enter First Name"
           required
         />
         <AppInputField
           id="ln"
           label="Last Name"
-          placeholder="Enter Last Name"
+          // placeholder="Enter Last Name"
           required
         />
       </div>
@@ -43,19 +44,19 @@ export default function ContactForm() {
           id="em"
           label="Email"
           type="email"
-          placeholder="Enter Email Address"
+          // placeholder="Enter Email Address"
           required
         />
         <AppInputField
           id="ph"
           label="Phone"
           type="tel"
-          placeholder="Enter Phone Number"
+          // placeholder="Enter Phone Number"
         />
       </div>
 
       <div>
-        <label className="mb-2 block text-sm font-semibold tracking-[0.02em] text-black">
+        <label className="mb-2 block text-sm font-semibold">
           Type of Enquiry
         </label>
         <div className="flex flex-wrap gap-2">
@@ -85,7 +86,7 @@ export default function ContactForm() {
         label="Message"
         textarea
         rows={4}
-        placeholder="Tell us about your project or enquiry..."
+        // placeholder="Tell us about your project or enquiry..."
         required
         className="resize-none"
       />
